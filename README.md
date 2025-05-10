@@ -1,41 +1,34 @@
-### De Bruijn Sequence Generator for DNA k-mers
-
-This Python script generates a De Bruijn sequence for a given alphabet size and subsequence length, tailored for DNA applications using the nucleotides A, C, G, and T.
-
-A De Bruijn sequence of order n over an alphabet of k symbols is a cyclic sequence in which every possible substring of length n appears exactly once. These sequences are widely used in bioinformatics, particularly in genome assembly and k-mer analysis.
-
-### Features
-Generates a minimal cyclic sequence that includes every possible k-mer exactly once.
-
-Customizable alphabet size and k-mer length.
-
-Default alphabet: "ACGT" (DNA bases).
+### De Bruijn Sequence Generator
+This script generates a De Bruijn sequence of order n over an alphabet of size k. A De Bruijn sequence is a cyclic sequence in which every possible k-mer of length n appears exactly once as a substring. This is commonly used in bioinformatics and DNA sequencing simulations. 
 
 ### Usage
-from itertools import product
+The function de_bruijn_sequence(k, n) generates a De Bruijn sequence for a DNA alphabet (A, C, G, T) truncated to the first k characters.
 
-def de_bruijn_sequence(k, n):
-    # Function body...
-    
-# Example: Generate a 4-universal string (all 4-mers over ACGT)
+```
+# Example: Generate a 4-universal string (for all 4^4 = 256 possible 4-mers)
 result = de_bruijn_sequence(4, 4)
 print(result)
+```
+### Example Output
+AAAACAAAGAAATAACACCACGACTAGAGCAGGAGTAGT...
 
-### Parameters
-k: Size of the alphabet. Default is 4 for DNA (A, C, G, T).
 
-n: Length of the k-mers you want the sequence to include.
+### Requirements
+Python 3.x
 
-### Output
-A string of length k^n + n - 1 representing the De Bruijn sequence.
+No external libraries are required (pure Python standard library).
 
-### Example 
-Input: k = 4, n = 4
-Output: AAAAACAAAGAAATAACACCACGACTAGAGCAGGAGTAGTATCATCCCGCCTCGCTG...
 
-### Applications
-Genome assembly using de Bruijn graphs.
+### ApplicationsThis script can be applied to:
 
-Testing DNA synthesis tools with comprehensive k-mer coverage.
+* Bioinformatics: Generate universal k-mer strings used in DNA sequence analysis and error correction.
+* Synthetic biology: DNA barcode design and experimental optimization.
+* Computer science: Graph theory, combinatorics, and efficient testing of string patterns.
+* Genomic simulations: Exhaustive testing of pattern-matching algorithms using all possible k-mers.
 
-Efficient storage and analysis of k-mers in bioinformatics.
+### License
+This project is distributed under the MIT License, which allows for free use, modification, and distribution.
+
+
+
+
